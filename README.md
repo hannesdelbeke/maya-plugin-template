@@ -10,6 +10,7 @@ This template has a `pyproject.toml` to support pip install to a Maya plugin fol
 ```
 pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/heads/main.zip --target "C:/Users/%username%/Documents/Maya/plug-ins"
 ```
+<sup>_if the target folder doesn't exist, this command creates a `Maya/plug-ins` folder in your documents , which requires admin access_</sup>
 
 #### add to menu
 - Maya menu sample code
