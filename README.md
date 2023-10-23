@@ -14,6 +14,7 @@ A template to quickly make a Python plugin for Maya. (For modules, see [Maya mod
 - Plugin setup
   - rename the demo plugin folder
   - add load & unload code to the `initializePlugin` & `uninitializePlugin` methods
+      - `initializePlugin` & `uninitializePlugin` don't follow the PEP8 name convention. Do not change this, or they won't run.
   - optionally handle command registration on load & unload 
 - Optional
   - replace this `README.md` with your own instructions
@@ -24,9 +25,7 @@ Plugins let the user easily enable / disable a tool in Maya (with Maya's plugin 
 They also let you run code on startup, without editing the `userSetup.py` file, keeping your Maya clean / vanilla.  
 
 ![](https://www.sidefx.com/media/uploads/products/engine/hengine_maya_load.jpg)  
-This project includes a `hello_world.py` plugin (a demo plugin from the Maya docs).  
 Plugins should be placed in the `MyModule/plug-ins` folder
-- note that `initializePlugin` & `uninitializePlugin` methods don't follow the PEP8 name convention. Do not change this.
 
 ### installation
 TODO
