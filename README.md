@@ -32,7 +32,6 @@ Plugins let the user easily enable / disable a tool in Maya (with Maya's plugin 
 They also let you run code on startup, without editing the `userSetup.py` file, keeping your Maya clean / vanilla.  
 
 ![](https://www.sidefx.com/media/uploads/products/engine/hengine_maya_load.jpg)  
-Plugins should be placed in the `MyModule/plug-ins` folder
 
 ### installation
 TODO
