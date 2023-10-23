@@ -9,6 +9,7 @@ A template to quickly make a Python plugin for Maya. (For modules, see [Maya mod
 ### Instructions
 - click 🟩`use this template` to create your GitHub repo, & clone it
 - change the data in the `pyproject.toml`
+- add dependencies to both `requirements.txt` and `pyproject.toml`
 - Plugin setup
   - rename the demo plugin folder
   - add load & unload code to the `initializePlugin` & `uninitializePlugin` methods
