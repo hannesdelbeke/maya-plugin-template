@@ -30,7 +30,8 @@ pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/h
   - Add a LICENSE
  
 ### Gotchas
-Maya plugins don't support packages, only a single module
+- Maya plugins don't support packages, only a single module
+- you can't add to existing menus. e.g. the `Windows` menu, named `mainWindowsMenu` or it will be empty if plugin loads on startup.
 
 ### Plugin
 Plugins let the user easily enable / disable a tool in Maya (with Maya's plugin manager)  
