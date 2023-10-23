@@ -3,7 +3,8 @@
 A template to quickly make a Python plugin for Maya. (For modules, see [Maya module template](https://github.com/hannesdelbeke/maya-module-template))
 
 ### Features
-- a `pyproject.toml` to support pip install
+- a `pyproject.toml` to support pip install to a Maya plugin folder]
+  - this will auto handle dependencies, removing the need for vendoring
 - Maya menu sample code
 
 ### Instructions
