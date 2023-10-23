@@ -1,12 +1,12 @@
 # Maya Python plugin template
 
 A template to quickly make a Python plugin for Maya. (For modules, see [Maya module template](https://github.com/hannesdelbeke/maya-module-template)  
-When installed, your plugin will display in Maya's plug-in manager  
-![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)
 - sample repo using this template: https://github.com/hannesdelbeke/maya-pip-qt  
 
 ### Features
 
+When installed, Maya's plug-in manager displays your plugin  
+![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)
 
 #### handle dependencies automatically
 Pip install auto handles dependencies, removing the need for vendoring dependencies. Without pip install you need to manually install the dependencies.  
