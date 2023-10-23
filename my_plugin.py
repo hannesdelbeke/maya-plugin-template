@@ -55,7 +55,7 @@ def show():
 def loadMenu():
     if not cmds.menu(MENU_NAME, exists=True):
         cmds.menu(MENU_NAME, label=MENU_LABEL, parent=MENU_PARENT)
-    cmds.menuItem(label=MENU_ENTRY_LABEL, command=show)', parent=MENU_NAME)  
+    cmds.menuItem(label=MENU_ENTRY_LABEL, command=show)  # , parent=MENU_NAME)  
 
 
 def unloadMenuItem():
