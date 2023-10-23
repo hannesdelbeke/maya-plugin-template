@@ -41,7 +41,7 @@ pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/h
 Plugins let the user easily enable / disable a tool in Maya (with Maya's plugin manager)  
 They also let you run code on startup, without editing the `userSetup.py` file, keeping your Maya clean / vanilla.  
 
-![](https://www.sidefx.com/media/uploads/products/engine/hengine_maya_load.jpg)  
+![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)
 
 ### installation
 TODO
