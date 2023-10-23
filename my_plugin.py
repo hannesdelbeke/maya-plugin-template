@@ -47,7 +47,7 @@ def unregister_command(plugin):
 
 
 # =============================== Menu ===========================================
-def show():
+def show(*args):
     # TODO import our custom module
     print("hello")
 
