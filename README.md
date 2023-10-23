@@ -27,6 +27,9 @@ pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/h
 - Optional
   - replace this `README.md` with your own instructions
   - Add a LICENSE
+ 
+### Gotchas
+Maya plugins don't support packages, only a single module
 
 ### Plugin
 Plugins let the user easily enable / disable a tool in Maya (with Maya's plugin manager)  
