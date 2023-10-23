@@ -8,7 +8,7 @@ https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/heads/main.zi
 Pip install auto handles dependencies, removing the need for vendoring dependencies. Without pip install you need to manually install the dependencies.  
 This template has a `pyproject.toml` to support pip install to a Maya plugin folder, e.g.
 ```
-`pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/heads/main.zip --target "C:/Users/%username%/Documents/Maya/plug-ins"`
+pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/heads/main.zip --target "C:/Users/%username%/Documents/Maya/plug-ins"
 ```
 
 #### add to menu
