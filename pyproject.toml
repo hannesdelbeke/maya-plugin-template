@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+# build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools]
+packages = ["my_plugin"]
+
+
+[project]
+name = "my_plugin"
+authors = [
+    {name = "Hannes"},
+]
+description = "a demo plugin for a maya template"
+readme = "README.md"
+requires-python = ">=3.4"
+keywords = ["maya", "plugin"]
+# license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3.7",
+]
+dependencies = [
+    'importlib-metadata; python_version<"3.7"',
+]
+# dynamic = ["version"]
+version = "0.0.1"
+
+# [project.optional-dependencies]
+# yaml = ["pyyaml"]
+
+# [project.scripts]
+# my-script = "my_package.module:function"
+
+[project.urls]
+Homepage = "https://github.com/hannesdelbeke/maya-plugin-template"

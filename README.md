@@ -1,36 +1,21 @@
-# Maya Python module & plugin template
+# Maya Python plugin template
 
-A template to quickly make a Python plugin & module for Maya
+A template to quickly make a Python plugin for Maya. (For modules, see [Maya module template](https://github.com/hannesdelbeke/maya-module-template))
+
+### Features
+- a `pyproject.toml` to support pip install
+- Maya menu sample code
 
 ### Instructions
 - click 🟩`use this template` to create your GitHub repo, & clone it
-- Module setup 
-  - rename the `MyModule` folder & `MyModule/myModule.mod` 
-  - open the `.mod` file and change the module name inside
+- change the data in the `pyproject.toml`
 - Plugin setup
-  - rename the demo plugin `MyModule/plug-ins/hello_world.py` 
+  - rename the demo plugin folder
   - add load & unload code to the `initializePlugin` & `uninitializePlugin` methods
   - optionally handle command registration on load & unload 
-- add your Python modules to `MyModule/scripts`
 - Optional
   - replace this `README.md` with your own instructions
   - Add a LICENSE
-  - delete all `.gitkeep` files
-  - add a button or menu entry that opens the documentation url
-
-### Module
-
-A module let's you change the Maya environment, without changing your Maya installation.  
-e.g. add resources, plugins, environment paths, ...  
-We use this to register our plugin with Maya in a modular way: When the user registers the module, everything else is automatically hooked up.  
-
-- the MyModule directory contains the module files.
-- the icons, plug-ins, presets, and scripts subdirectories are the default directories that Maya expects to find in a module. You can choose to use different directories or multiple directories in your module, but you will need to specify these in the (.mod) module description file.
-  - Add any icons used in your add-on to the icons directory
-  - Add C++ and Python plug-ins to the plug-ins directory
-  - Add presets to the presets directory
-  - Add any MEL or Python scripts to the scripts directory
-- Create a module description file file with the `.mod` extension (see [docs](https://help.autodesk.com/view/MAYAUL/2023/ENU/?guid=Maya_SDK_Distributing_Maya_Plug_ins_DistributingUsingModules_ModuleDescriptionFiles_html))
 
 ### Plugin
 Plugins let the user easily enable / disable a tool in Maya (with Maya's plugin manager)  
@@ -40,32 +25,6 @@ They also let you run code on startup, without editing the `userSetup.py` file, 
 This project includes a `hello_world.py` plugin (a demo plugin from the Maya docs).  
 Plugins should be placed in the `MyModule/plug-ins` folder
 - note that `initializePlugin` & `uninitializePlugin` methods don't follow the PEP8 name convention. Do not change this.
-
-### Scripts
-Python modules become importable when placed in `myModule/scripts`.  
-It might be a good practice to develop them in a separate repo, so the module can have it's own `pyproject.toml` & `requirements.txt`
-
-### Icons
-Icons in the icon folder can be accessed in Qt by name:
-```python
-# search custom icons in the maya icon path. only default maya icons are exposed to qt.
-def get_icon_path(name: str = None) -> Optional[str]:
-    default_name = "cube.png"
-    name = name or default_name
-    for icon_dir in os.environ.get('XBMLANGPATH', '').split(os.pathsep):
-        icon_path = os.path.join(icon_dir, name)
-        if os.path.exists(icon_path):
-            return icon_path
-    if name != default_name:
-        return get_icon_path(default_name)
-
-icon = QtGui.QIcon(QtGui.QPixmap(':/trash.png'))
-```
-
-### presets
-attribute presets
-- [ ] TODO createa a sample  
-[docs](https://help.autodesk.com/view/MAYAUL/2023/ENU/?guid=GUID-B90EF3C9-EFB8-4BBC-B9A5-69F7EC86B3C3)
 
 ### installation
 TODO
@@ -156,9 +115,4 @@ def uninitializePlugin(plugin):
 ```
 
 ### references
-- [module layout docs](https://help.autodesk.com/view/MAYAUL/2023/ENU/?guid=Maya_SDK_Distributing_Maya_Plug_ins_DistributingUsingModules_CreatingAModulePackage_html)
-- [module install docs](https://help.autodesk.com/view/MAYAUL/2023/ENU/?guid=Maya_SDK_Distributing_Maya_Plug_ins_DistributingUsingModules_InstallingModules_html)
-  - you can manually install the module by moving the MyModule folder in the maya modules folder 
-  - maya searches for modules in the `MAYA_MODULE_PATH` env var
-  - you can also add paths to `Maya.env` file
 - [maya plugin docs](https://help.autodesk.com/view/MAYAUL/2024/ENU/?guid=Maya_SDK_A_First_Plugin_Python_html)
