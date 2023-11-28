@@ -1,7 +1,9 @@
 # Maya Python plugin template
 
 A template to quickly make a Python plugin for Maya. (For modules, see [Maya module template](https://github.com/hannesdelbeke/maya-module-template)  
-- sample repo using this template: https://github.com/hannesdelbeke/maya-pip-qt  
+sample repo using this template:
+- https://github.com/hannesdelbeke/maya-pip-qt
+- https://github.com/plugget/plugget-qt-maya-plugin
 
 ### Features
 
