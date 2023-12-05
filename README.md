@@ -133,4 +133,5 @@ def uninitializePlugin(plugin):
 
 ### references
 - [maya plugin docs](https://help.autodesk.com/view/MAYAUL/2024/ENU/?guid=Maya_SDK_A_First_Plugin_Python_html)
-- https://download.autodesk.com/us/maya/2010help/CommandsPython/pluginInfo.html#flagcommand
+- list loaded plugins, find plugin command from plugin, .. docs https://download.autodesk.com/us/maya/2010help/CommandsPython/pluginInfo.html#flagcommand
+- similar maya plugin template https://github.com/minoue/miMayaPlugins/blob/master/plugin_templates/python_command/pyPluginCmd.py
