@@ -4,6 +4,7 @@ A template to quickly make a Python plugin for Maya. (For modules, see [Maya mod
 sample repo using this template:
 - https://github.com/hannesdelbeke/maya-pip-qt
 - https://github.com/plugget/plugget-qt-maya-plugin
+- https://github.com/hannesdelbeke/pyblish-maya-plugin
 
 ### Features
 
