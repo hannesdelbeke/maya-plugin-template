@@ -5,6 +5,7 @@ sample repo using this template:
 - https://github.com/hannesdelbeke/maya-pip-qt
 - https://github.com/plugget/plugget-qt-maya-plugin
 - https://github.com/hannesdelbeke/pyblish-maya-plugin
+- https://github.com/hannesdelbeke/maya-plugin-duplicate-obj-along-curve
 
 ### Features
 
