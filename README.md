@@ -6,6 +6,7 @@ sample repo using this template:
 - https://github.com/plugget/plugget-qt-maya-plugin
 - https://github.com/hannesdelbeke/pyblish-maya-plugin
 - https://github.com/hannesdelbeke/maya-plugin-duplicate-obj-along-curve
+- https://github.com/hannesdelbeke/maya-plugin-snap-to-closest-UV
 
 ### Features
 
