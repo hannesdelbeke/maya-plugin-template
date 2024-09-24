@@ -12,19 +12,30 @@ sample repo using this template:
 ### Features
 
 When installed, Maya's plug-in manager displays your plugin  
-![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)
+![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)  
+With the plug-in manager you can :
+- easily enable / disable a tool in Maya
+- Auto run code on startup, without editing your `userSetup.py` file, keeping your Maya clean / vanilla. (great for debugging)
 
 #### handle dependencies automatically
-Pip install auto handles dependencies, removing the need for vendoring dependencies. Without pip install you need to manually install the dependencies.  
-This template has a `pyproject.toml` to support pip install to a Maya plugin folder, e.g.
+A pip install auto handles dependencies, removing the need for vendoring dependencies. Without pip install you need to manually install the dependencies.  
+This template includes a `pyproject.toml` to support a pip install to a Maya plugin folder, e.g.
 ```
 pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/heads/main.zip --target "C:/Users/%username%/Documents/Maya/plug-ins"
 ```
-<sup>_1. if the target folder doesn't exist, this command creates a `Maya/plug-ins` folder in your documents , which requires admin access_</sup>  
-<sup>_2. When a user has been renamed on Windows, `%username%` will return the current name. But the folder path will use the old name_</sup>  
+<details>
+<summary>Read this if the above command fails</summary>
 
-#### add to menu
-- Maya menu sample code
+<sup>_1. if the target folder doesn't exist, this command creates a `Maya/plug-ins` folder in your documents , which requires admin access._</sup>  
+<sup>_2. When a user has been renamed on Windows, `%username%` will return the current name. But the folder path will use the old name, resulting in this demo command failing._</sup>  
+</details>
+
+### menu entry
+- Create a menu when the plugin is enabled
+- Unload the menu on plugin unload
+
+PS: You can also use [unimenu](https://github.com/hannesdelbeke/unimenu) to add your tool to the Maya menu. Recommended for studio setups  
+
 
 ### Instructions
 - click 🟩`use this template` to create your GitHub repo, & clone it
@@ -40,34 +51,22 @@ pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/h
   - Add a LICENSE
  
 ### Gotchas
-- Maya plugins don't support packages, only a single module
+- Maya plugins don't support packages, only a single module. To include a package in your plugin, use pip dependencies.
 - you can't add to existing menus. e.g. the `Windows` menu, named `mainWindowsMenu` or it will be empty if plugin loads on startup.
-
-### Plugin
-Plugins let the user easily enable / disable a tool in Maya (with Maya's plugin manager)  
-They also let you run code on startup, without editing the `userSetup.py` file, keeping your Maya clean / vanilla.  
+  - [ ] TODO add support for this
 
 ### installation
-TODO
-### menu entry
-- [ ] Create the menu on the plugin initialize
-- [ ] **TODO replace with cmds code, pymel is not included by default anymore**
-```python
-import pymel.core as pm
-main_maya_window = pm.language.melGlobals['gMainWindow'] 
-custom_menu = pm.menu('Custom Menu', parent=main_maya_window)
-pm.menuItem(label="hello", command="print('hello')", parent=custom_menu)
-```
-- [ ] unload the menu on uninitialize
-- You can also use [unimenu](https://github.com/hannesdelbeke/unimenu) to add your tool to the Maya menu. Recommended for studio setups  
+- [ ] TODO
 
-TODO
 ### tool entry
-TODO
+- [ ] TODO
 ### shelf entry
-TODO
+- [ ] TODO
 
 ### Command
+You can add commands to you Maya plugin. Included this in the template but I never use this. Feel free to just delete all code related to commands.
+<details>
+<summary>see more command info</summary>
 
 Adding a command to your plugin is optional. (I never had the need for it)
 In Maya Python scripting, MPxCommand is a base class for creating custom commands. Below is a simple example of creating a custom command using MPxCommand. This example demonstrates a command that creates a cube.
@@ -134,6 +133,7 @@ def uninitializePlugin(plugin):
 #    cmds.createCube()
 #    ```
 ```
+</details>
 
 ### references
 - [maya plugin docs](https://help.autodesk.com/view/MAYAUL/2024/ENU/?guid=Maya_SDK_A_First_Plugin_Python_html)
