@@ -2,19 +2,7 @@
 
 A template to quickly make a Python plugin for Maya. (For modules, see [Maya module template](https://github.com/hannesdelbeke/maya-module-template)  
 
-<details>
-<summary>sample repos using this template</summary>
-
-create a PR to add your repo below 😊
-- https://github.com/hannesdelbeke/maya-pip-qt
-- https://github.com/plugget/plugget-qt-maya-plugin
-- https://github.com/hannesdelbeke/pyblish-maya-plugin
-- https://github.com/hannesdelbeke/maya-plugin-duplicate-obj-along-curve
-- https://github.com/hannesdelbeke/maya-plugin-snap-to-closest-UV
-
-</details>
-
-### Features
+## Features
 
 When installed, Maya's plug-in manager displays your plugin  
 ![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)  
@@ -24,7 +12,7 @@ With the plug-in manager you can :
 
 #### handle dependencies automatically
 A pip install auto handles dependencies, removing the need for vendoring dependencies. Without pip install you need to manually install the dependencies.  
-This template includes a `pyproject.toml` to support a pip install to a Maya plugin folder, e.g.
+This template includes a `pyproject.toml` to support a pip install to a Maya plugin folder, this command triggers a pip install from this repo:
 ```
 pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/heads/main.zip --target "C:/Users/%username%/Documents/Maya/plug-ins"
 ```
@@ -34,15 +22,16 @@ pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/h
 <sup>_1. if the target folder doesn't exist, this command creates a `Maya/plug-ins` folder in your documents , which requires admin access._</sup>  
 <sup>_2. When a user has been renamed on Windows, `%username%` will return the current name. But the folder path will use the old name, resulting in this demo command failing._</sup>  
 </details>
+Maya plugins don't support Python packages, they only support a single `.py` file.  
+To include a package in your plugin, I recommend to use pip dependencies.
 
 ### menu entry
 - Create a menu when the plugin is enabled
 - Unload the menu on plugin unload
 
-PS: You can also use [unimenu](https://github.com/hannesdelbeke/unimenu) to add your tool to the Maya menu. Recommended for studio setups  
+> PS: You can also use [unimenu](https://github.com/hannesdelbeke/unimenu) to add your tool to the Maya menu. Recommended for more advanced - and less modular - studio setups.
 
-
-### Instructions
+## Instructions
 - click 🟩`use this template` to create your GitHub repo, & clone it
 - change the data in the `pyproject.toml`
 - add dependencies to both `requirements.txt` and `pyproject.toml`
@@ -54,11 +43,7 @@ PS: You can also use [unimenu](https://github.com/hannesdelbeke/unimenu) to add 
 - Optional
   - replace this `README.md` with your own instructions
   - Add a LICENSE
- 
-### Gotchas
-- Maya plugins don't support packages, only a single module. To include a package in your plugin, use pip dependencies.
-- you can't add to existing menus. e.g. the `Windows` menu, named `mainWindowsMenu` or it will be empty if plugin loads on startup.
-  - [ ] TODO add support for this
+
 
 ### installation
 - [ ] TODO
@@ -141,6 +126,18 @@ def uninitializePlugin(plugin):
 might consider adding
 - [ ] toolbox entry
 - [ ] shelf entry
+
+<details>
+<summary>sample repos using this template</summary>
+
+create a PR to add your repo below 😊
+- https://github.com/hannesdelbeke/maya-pip-qt
+- https://github.com/plugget/plugget-qt-maya-plugin
+- https://github.com/hannesdelbeke/pyblish-maya-plugin
+- https://github.com/hannesdelbeke/maya-plugin-duplicate-obj-along-curve
+- https://github.com/hannesdelbeke/maya-plugin-snap-to-closest-UV
+
+</details>
 
 ### references
 - [maya plugin docs](https://help.autodesk.com/view/MAYAUL/2024/ENU/?guid=Maya_SDK_A_First_Plugin_Python_html)
