@@ -2,12 +2,17 @@
 
 A template to quickly make a Python plugin for Maya. (For modules, see [Maya module template](https://github.com/hannesdelbeke/maya-module-template)  
 
-sample repo using this template:
+<details>
+<summary>sample repos using this template</summary>
+
+create a PR to add your repo below 😊
 - https://github.com/hannesdelbeke/maya-pip-qt
 - https://github.com/plugget/plugget-qt-maya-plugin
 - https://github.com/hannesdelbeke/pyblish-maya-plugin
 - https://github.com/hannesdelbeke/maya-plugin-duplicate-obj-along-curve
 - https://github.com/hannesdelbeke/maya-plugin-snap-to-closest-UV
+
+</details>
 
 ### Features
 
@@ -58,15 +63,12 @@ PS: You can also use [unimenu](https://github.com/hannesdelbeke/unimenu) to add 
 ### installation
 - [ ] TODO
 
-### tool entry
-- [ ] TODO
-### shelf entry
-- [ ] TODO
 
-### Command
-You can add commands to you Maya plugin. Included this in the template but I never use this. Feel free to just delete all code related to commands.
+### Extras
 <details>
-<summary>see more command info</summary>
+<summary>see command info</summary>
+
+You can add commands to you Maya plugin. Included this in the template but I never use this. Feel free to just delete all code related to commands.
 
 Adding a command to your plugin is optional. (I never had the need for it)
 In Maya Python scripting, MPxCommand is a base class for creating custom commands. Below is a simple example of creating a custom command using MPxCommand. This example demonstrates a command that creates a cube.
@@ -134,8 +136,14 @@ def uninitializePlugin(plugin):
 #    ```
 ```
 </details>
+<br>
+
+might consider adding
+- [ ] toolbox entry
+- [ ] shelf entry
 
 ### references
 - [maya plugin docs](https://help.autodesk.com/view/MAYAUL/2024/ENU/?guid=Maya_SDK_A_First_Plugin_Python_html)
 - list loaded plugins, find plugin command from plugin, .. docs https://download.autodesk.com/us/maya/2010help/CommandsPython/pluginInfo.html#flagcommand
 - similar maya plugin template https://github.com/minoue/miMayaPlugins/blob/master/plugin_templates/python_command/pyPluginCmd.py
+
