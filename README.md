@@ -11,8 +11,10 @@ With the plug-in manager you can :
 - Auto run code on startup, without editing your `userSetup.py` file, keeping your Maya clean / vanilla. (great for debugging)
 
 #### handle dependencies automatically
-A pip install auto handles dependencies, removing the need for vendoring dependencies. Without pip install you need to manually install the dependencies.  
-This template includes a `pyproject.toml` to support a pip install to a Maya plugin folder, this command triggers a pip install from this repo:
+A pip install auto handles dependencies, removing the need for vendoring dependencies.  
+Without pip install you need to manually install the dependencies.  
+This template includes a `pyproject.toml` to support a pip install to a Maya plugin folder.  
+The below command triggers a pip install from this repo:
 ```
 pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/heads/main.zip --target "C:/Users/%username%/Documents/Maya/plug-ins"
 ```
@@ -29,7 +31,7 @@ To include a package in your plugin, I recommend to use pip dependencies.
 - Create a menu when the plugin is enabled
 - Unload the menu on plugin unload
 
-> PS: You can also use [unimenu](https://github.com/hannesdelbeke/unimenu) to add your tool to the Maya menu. Recommended for more advanced - and less modular - studio setups.
+> PS: You can also use [unimenu](https://github.com/hannesdelbeke/unimenu) to add your tool to the Maya menu. Recommended for more advanced studio setups.
 
 ## Instructions
 - click 🟩`use this template` to create your GitHub repo, & clone it
@@ -37,6 +39,7 @@ To include a package in your plugin, I recommend to use pip dependencies.
 - add dependencies to both `requirements.txt` and `pyproject.toml`
 - Plugin setup
   - rename the demo plugin folder
+  - change the `MENU_NAME` and other menu variables at the top of the file to customize the tool's menu entry.
   - add load & unload code to the `initializePlugin` & `uninitializePlugin` methods
       - `initializePlugin` & `uninitializePlugin` don't follow the PEP8 name convention. Do not change this, or they won't run.
   - optionally handle command registration on load & unload 
@@ -121,11 +124,6 @@ def uninitializePlugin(plugin):
 #    ```
 ```
 </details>
-<br>
-
-might consider adding
-- [ ] toolbox entry
-- [ ] shelf entry
 
 <details>
 <summary>sample repos using this template</summary>
@@ -138,6 +136,8 @@ create a PR to add your repo below 😊
 - https://github.com/hannesdelbeke/maya-plugin-snap-to-closest-UV
 
 </details>
+
+might consider adding: support for toolbox & shelf entries
 
 ### references
 - [maya plugin docs](https://help.autodesk.com/view/MAYAUL/2024/ENU/?guid=Maya_SDK_A_First_Plugin_Python_html)
