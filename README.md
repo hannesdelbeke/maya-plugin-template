@@ -10,7 +10,7 @@ A template to quickly make a Python plugin for Maya. (For modules, see [Maya mod
 - Easily enable / disable a tool in Maya with the plug-in manager. Smoothly disable your tools if they cause issues.
 - Support to auto run code on startup, without editing your `userSetup.py` file, keeping your Maya clean / vanilla. (great for debugging)
 - Adds your tool to the Maya menu when plugin enabled
-- Support for MPXCommands (beta)
+- Support MPXCommands (beta)
 
 ## Overview
 
