@@ -9,7 +9,8 @@ A template to quickly make a Python plugin for Maya. (For modules, see [Maya mod
     - and it installs all Python dependencies (scripts) from https://pypi.org/
 - Easily enable / disable a tool with the plug-in manager. Smoothly disable your tools if they cause issues.
 - Run startup code, without editing `userSetup.py`, keeping your Maya setup clean. (great for debugging)
-- Adds your tool to the Maya menu when plugin enabled, and remove from menu when unloaded
+- Adds your tool to the Maya menu when plugin enabled, and remove from menu when unloaded  
+  ![image](https://github.com/user-attachments/assets/568ae08c-0521-44f4-80d9-d280e60b9742)
 - Support MPXCommands (beta)
 
 ## Overview
