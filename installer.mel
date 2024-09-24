@@ -1,0 +1,98 @@
+// TODO change this to your plugin name
+string $MY_PLUGIN_NAME = "my_plugin.py";
+
+// Execute a Python command to get the path to the Maya Python interpreter
+string $mayaPythonPath = `python("import sys; f'\"{sys.executable}\"'")`;
+
+// Get Maya python interpreter path
+string $mayaInterpreter = `substitute "maya.exe" $mayaPythonPath "mayapy.exe"`;
+
+// Create a loading bar
+string $progressWindow = `progressWindow -title "Installing Package" -progress 0 -status "Installing..." -isInterruptable true`;
+
+// Define a dummy global procedure to use `whatIs` to find the MEL script path
+global proc FindMe() {}
+
+// Get the path of the MEL script using `whatIs`
+string $melScriptPath = `whatIs "FindMe"`;
+
+// The `whatIs` command returns a string like "Mel procedure found in: /path/to/installer.mel",
+// so we need to extract the actual file path by removing the "Mel procedure found in: " part
+string $melScriptDir = `substitute "Mel procedure found in: " $melScriptPath ""`;
+
+// Remove the script file name ("installer.mel") from the path
+$melScriptDir = `dirname $melScriptDir`;
+print("melScriptDir: " + $melScriptDir + "\n");
+
+// get the requirements.txt path to install our dependencies
+string $requirementsFilePath = $melScriptDir + "/requirements.txt";
+// Check if the `requirements.txt` file exists
+if (!`filetest -f $requirementsFilePath`) {
+    error("requirements.txt file does not exist at: " + $requirementsFilePath);
+} else {
+    print("requirements.txt found at: " + $requirementsFilePath + "\n");
+}
+
+// install dependencies
+string $targetFolderPath = `getenv "HOME"` + "/maya/scripts/";
+string $pipInstallCommand = $mayaInterpreter + " -m pip install --target=" + $targetFolderPath + " -r " + $requirementsFilePath;
+print("Running command: " + $pipInstallCommand + "\n");
+system($pipInstallCommand);  // Execute the pip install command
+
+
+
+
+
+// Define the plugin file path relative to the MEL script's location
+string $pluginSourceFilePath = $melScriptDir + "/" + $MY_PLUGIN_NAME;
+print("Plugin source path: " + $pluginSourceFilePath + "\n");
+
+// Get the Maya plug-ins folder
+string $pluginFolderPath = `getenv "HOME"` + "/maya/plug-ins/"; 
+// Check if the plugin folder exists using `filetest`, and create it if not
+if (!`filetest -d $pluginFolderPath`) {
+    // Create the plugin folder
+    sysFile -makeDir $pluginFolderPath;
+    print("Plugin folder created: " + $pluginFolderPath + "\n");
+
+    // If a new folder was created, append it to MAYA_PLUG_IN_PATH
+    string $pluginPathEnv = `getenv "MAYA_PLUG_IN_PATH"`;
+    string $newPluginPathEnv = $pluginPathEnv + ";" + $pluginFolderPath;
+    putenv "MAYA_PLUG_IN_PATH" $newPluginPathEnv;
+} else {
+    print("Plugin folder already exists: " + $pluginFolderPath + "\n");
+}
+
+// Define the destination plugin file path
+string $pluginDestinationFilePath = $pluginFolderPath + $MY_PLUGIN_NAME;
+
+// Check if the source plugin file exists
+if (!`filetest -f $pluginSourceFilePath`) {
+    error("Source plugin file does not exist: " + $pluginSourceFilePath);
+}
+
+// Copy the plugin file to the Maya plug-ins folder
+print("copy plugin file from: " + $pluginSourceFilePath + " to: " + $pluginDestinationFilePath + "\n");
+
+
+python("import shutil; shutil.copyfile(r'" + $pluginSourceFilePath + "', r'" + $pluginDestinationFilePath + "')");
+// Check if the plugin copied
+if (!`filetest -f $pluginDestinationFilePath`) {
+    error("plugin file did not copy to: " + $pluginDestinationFilePath);
+}
+print("Plugin file copied to: " + $pluginDestinationFilePath + "\n");
+print("Package installation complete.\n");
+// Close the progress window
+progressWindow -endProgress;
+
+// Load the plugin, this might fail if the plugin contains python errors
+loadPlugin $MY_PLUGIN_NAME;
+// Enable the plugin
+eval("plug-inInfo -q -loaded " + $MY_PLUGIN_NAME);
+
+
+
+
+
+
+
