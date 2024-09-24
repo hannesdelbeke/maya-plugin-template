@@ -3,12 +3,19 @@
 A template to quickly make a Python plugin for Maya. (For modules, see [Maya module template](https://github.com/hannesdelbeke/maya-module-template)  
 
 ## Features
+- simple installation
+    - Drag & drop installation with `installer.mel`. (Windows only)
+    - it installs the Python plugin
+    - and it installs all Python dependencies (scripts) from https://pypi.org/
+- Easily enable / disable a tool in Maya with the plug-in manager. Smoothly disable your tools if they cause issues.
+- Support to auto run code on startup, without editing your `userSetup.py` file, keeping your Maya clean / vanilla. (great for debugging)
+- Adds your tool to the Maya menu when plugin enabled
+- Support for MPXCommands (beta)
 
-When installed, Maya's plug-in manager displays your plugin  
+## Overview
+
+When succesffully installed, Maya's plug-in manager displays your plugin  
 ![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)  
-With the plug-in manager you can :
-- easily enable / disable a tool in Maya
-- Auto run code on startup, without editing your `userSetup.py` file, keeping your Maya clean / vanilla. (great for debugging)
 
 #### handle dependencies automatically
 A pip install auto handles dependencies, removing the need for vendoring dependencies.  
@@ -26,6 +33,8 @@ pip install https://github.com/hannesdelbeke/maya-plugin-template/archive/refs/h
 </details>
 Maya plugins don't support Python packages, they only support a single `.py` file.  
 To include a package in your plugin, I recommend to use pip dependencies.
+
+the drag and drop installer uses requirements.txt to install dependencies. and installs them to `documents/maya/scripts`.
 
 ### menu entry
 - Create a menu when the plugin is enabled
@@ -46,11 +55,7 @@ To include a package in your plugin, I recommend to use pip dependencies.
 - Optional
   - replace this `README.md` with your own instructions
   - Add a LICENSE
-
-
-### installation
-- [ ] TODO
-
+- edit the `installer.mel` to support drag and drop installation of your plugin. Change the variable at the top to your python script name. For drag & drop installation of your Maya plugin to `documents/maya/plug-ins`. Just drag the `installer.mel` file in Maya. (Windows only)
 
 ### Extras
 <details>
