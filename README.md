@@ -9,7 +9,7 @@ A template to quickly make a Python plugin for Maya. (For modules, see [Maya mod
     - and it installs all Python dependencies (scripts) from https://pypi.org/
 - Easily enable / disable a tool with the plug-in manager. Smoothly disable your tools if they cause issues.
 - Run startup code, without editing `userSetup.py`, keeping your Maya setup clean. (great for debugging)
-- Adds your tool to the Maya menu when plugin enabled
+- Adds your tool to the Maya menu when plugin enabled, and remove from menu when unloaded
 - Support MPXCommands (beta)
 
 ## Overview
@@ -36,11 +36,6 @@ To include a package in your plugin, I recommend to use pip dependencies.
 
 the drag and drop installer uses requirements.txt to install dependencies. and installs them to `documents/maya/scripts`.
 
-### menu entry
-- Create a menu when the plugin is enabled
-- Unload the menu on plugin unload
-
-> PS: You can also use [unimenu](https://github.com/hannesdelbeke/unimenu) to add your tool to the Maya menu. Recommended for more advanced studio setups.
 
 ## Instructions
 - click 🟩`use this template` to create your GitHub repo, & clone it
@@ -142,7 +137,8 @@ create a PR to add your repo below 😊
 
 </details>
 
-might consider adding: support for toolbox & shelf entries
+- might consider adding: support for toolbox & shelf entries
+- PS: You can also use [unimenu](https://github.com/hannesdelbeke/unimenu) to add your tool to the Maya menu. Recommended for more advanced studio setups.
 
 ### references
 - [maya plugin docs](https://help.autodesk.com/view/MAYAUL/2024/ENU/?guid=Maya_SDK_A_First_Plugin_Python_html)
