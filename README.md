@@ -7,16 +7,14 @@ A template to quickly make a Python plugin for Maya. (For modules, see [Maya mod
     - Drag & drop installation with `installer.mel`. (Windows only)
     - it installs the Python plugin
     - and it installs all Python dependencies (scripts) from https://pypi.org/
-- Easily enable / disable a tool with the plug-in manager. Smoothly disable your tools if they cause issues.
+- Easily enable / disable a tool with the plug-in manager. Smoothly disable your tools if they cause issues.  
+  ![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)  
 - Run startup code, without editing `userSetup.py`, keeping your Maya setup clean. (great for debugging)
 - Adds your tool to the Maya menu when plugin enabled, and remove from menu when unloaded  
   ![image](https://github.com/user-attachments/assets/568ae08c-0521-44f4-80d9-d280e60b9742)
 - Support MPXCommands (beta)
 
 ## Overview
-
-When succesffully installed, Maya's plug-in manager displays your plugin  
-![image](https://github.com/hannesdelbeke/maya-plugin-template/assets/3758308/a7134b7c-e9a0-45a9-8853-3493e191e848)  
 
 #### handle dependencies automatically
 A pip install auto handles dependencies, removing the need for vendoring dependencies.  
