@@ -1,6 +1,8 @@
 import sys
 import maya.api.OpenMaya as om
 import maya.cmds as cmds
+import maya.mel as mel
+
 
 # this plugin menu setup creates a single menu entry
 # to create a menu under Windows/my-tool
